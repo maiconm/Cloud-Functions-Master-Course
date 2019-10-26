@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "default": "cloud-functions-master-c-94324"
+  }
+}
