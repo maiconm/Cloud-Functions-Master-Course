@@ -2,6 +2,9 @@
 **/*.js
 **/*.js.map
 
+## Contains private information from firebase
+service-account.json
+
 # Typescript v1 declaration files
 typings/
 
