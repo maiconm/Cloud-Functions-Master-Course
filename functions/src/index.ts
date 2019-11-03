@@ -1,1 +1,1 @@
-export { basicHTTP } from './http';
+export { basicHTTP, api } from './http';
