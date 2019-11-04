@@ -9,14 +9,15 @@ const client = Twilio(credentials.sid, credentials.token);
 
 const db = admin.firestore();
 
-export const sendText = functions.https.onCall(async (data, context) => {
+export const sendText = functions.https.onCall(async (data, context?) => {
   const userId = context.auth ? context.auth.uid : null;
 
   const userRef = db.doc(`user/${userId}`);
 
   const userSnap = await userRef.get();
+  const object = userSnap.data();
 
-  const number = userSnap.data().phoneNumber;
+  const number = object ? object.phoneNumber : null;
 
   return client.messages.create({
     body: data.message,
